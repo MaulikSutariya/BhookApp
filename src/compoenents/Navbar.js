@@ -1,7 +1,15 @@
 import { View, Image, Pressable } from "react-native";
 import React from "react";
+import { useNavigation } from '@react-navigation/native';
 
-export default function Navbar({Home}) {
+export default function Navbar() {
+  const navigation = useNavigation();
+  const LikeDishes = () => {
+    navigation.navigate("LikeDishes");
+  };
+  const Profile = () => {
+    navigation.navigate("Profile");
+  };
   return (
     <View
       style={{
@@ -19,13 +27,13 @@ export default function Navbar({Home}) {
       <Pressable>
         <Image source={require("../image/Home.png")} />
       </Pressable>
-      <Pressable>
+      <Pressable onPress={LikeDishes}>
         <Image source={require("../image/Favorite.png")} />
       </Pressable>
       <Pressable>
         <Image source={require("../image/Search.png")} />
       </Pressable>
-      <Pressable>
+      <Pressable onPress={Profile}>
         <Image source={require("../image/Profile.png")} />
       </Pressable>
     </View>

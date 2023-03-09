@@ -1,14 +1,13 @@
 import { View, Text, Image, Pressable, ScrollView } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 
-export default function OrderSummary({ navigation }) {
+import { RadioButton } from "react-native-paper";
+
+export default function Payment({ navigation }) {
   const navigateonboarding = () => {
     navigation.navigate("AddDeliveryAddress");
   };
-  const Payment = () => {
-    navigation.navigate("Payment");
-  };
-
+  const [checked, setChecked] = useState("first");
   return (
     <ScrollView
       alwaysBounceVertical={false}
@@ -75,7 +74,7 @@ export default function OrderSummary({ navigation }) {
           <View style={{ alignItems: "center" }}>
             <View
               style={{
-                backgroundColor: "#FF640D",
+                backgroundColor: "#3F3D56",
                 height: 50,
                 width: 50,
                 borderRadius: 50,
@@ -85,7 +84,7 @@ export default function OrderSummary({ navigation }) {
             >
               <Image source={require("../image/OrderSummary.png")} />
             </View>
-            <Text style={{ fontSize: 14, fontWeight: "700", marginTop: 5 }}>
+            <Text style={{ fontSize: 14, fontWeight: "400", marginTop: 5 }}>
               Order summary
             </Text>
           </View>
@@ -102,7 +101,7 @@ export default function OrderSummary({ navigation }) {
           <View style={{ alignItems: "center" }}>
             <View
               style={{
-                backgroundColor: "#3F3D56",
+                backgroundColor: "#FF640D",
                 height: 50,
                 width: 50,
                 borderRadius: 50,
@@ -112,7 +111,7 @@ export default function OrderSummary({ navigation }) {
             >
               <Image source={require("../image/Payment.png")} />
             </View>
-            <Text style={{ fontSize: 14, fontWeight: "400", marginTop: 5 }}>
+            <Text style={{ fontSize: 14, fontWeight: "700", marginTop: 5 }}>
               Payment
             </Text>
           </View>
@@ -121,97 +120,158 @@ export default function OrderSummary({ navigation }) {
         <View
           style={{
             backgroundColor: "white",
-            paddingLeft: 25,
-            paddingRight: 25,
-            paddingTop: 15,
-            paddingBottom: 15,
             marginTop: 25,
+            width: "100%",
           }}
         >
-          <Text style={{ fontSize: 17, fontWeight: 700 }}>Abhishek Kumar</Text>
           <Text
             style={{
-              fontSize: 15,
-              fontWeight: 400,
-              lineHeight: 20,
-              marginTop: 8,
+              fontSize: 17,
+              fontWeight: 700,
+              paddingLeft: 25,
+              paddingRight: 25,
+              paddingTop: 25,
+              paddingBottom: 15,
             }}
           >
-            Sunshine building room no. 405, Thane - 400798 Mumbai 8828447664
+            All other options
           </Text>
-          <Pressable
+
+          <View
             style={{
-              height: 50,
-              backgroundColor: "#FF640D",
-              borderRadius: 5,
               flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 30,
+              width: "80%",
               alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              marginTop: 25,
             }}
           >
-            <Text
+            <RadioButton.Group
+              onValueChange={(newValue) => setChecked(newValue)}
+              value={checked}
+            >
+              <RadioButton.Item value="first" />
+            </RadioButton.Group>
+            <View
               style={{
-                color: "white",
-                fontSize: 17,
-                fontWeight: "700",
-                marginLeft: 10,
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
               }}
             >
-              Change or Add address
-            </Text>
-          </Pressable>
-        </View>
-
-        <View
-          style={{
-            backgroundColor: "white",
-            paddingLeft: 25,
-            paddingRight: 25,
-            paddingTop: 25,
-            paddingBottom: 25,
-            marginTop: 25,
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
-          <View>
-            <Text style={{ fontSize: 17, fontWeight: 700 }}>
-              Vegan Chickpea....
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                fontWeight: 400,
-                marginTop: 8,
-                color: "gray",
-              }}
-            >
-              Seller: Raj Kitchen
-            </Text>
-            <Text
-              style={{
-                fontSize: 21,
-                fontWeight: 700,
-                color: "gray",
-                marginTop: 10,
-              }}
-            >
-              ₹200
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                fontWeight: 400,
-                marginTop: 5,
-                color: "gray",
-              }}
-            >
-              Delivery by tomorrow, Fri
-            </Text>
+              <Text style={{ fontSize: 21, fontWeight: 500 }}>UPI</Text>
+              <Image source={require("../image/PaymentGoogle.png")} />
+            </View>
           </View>
-          <Image source={require("../image/OrderSummaryImg.png")} />
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 30,
+              width: "80%",
+              alignItems: "center",
+            }}
+          >
+            <RadioButton.Group
+              onValueChange={(newValue) => setChecked(newValue)}
+              value={checked}
+            >
+              <RadioButton.Item value="second" />
+            </RadioButton.Group>
+            <View
+              style={{
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={{ fontSize: 21, fontWeight: 500 }}>Wallets</Text>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 30,
+              width: "80%",
+              alignItems: "center",
+            }}
+          >
+            <RadioButton.Group
+              onValueChange={(newValue) => setChecked(newValue)}
+              value={checked}
+            >
+              <RadioButton.Item value="third" />
+            </RadioButton.Group>
+            <View
+              style={{
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={{ fontSize: 21, fontWeight: 500 }}>
+                Credit / Debit / ATM Card
+              </Text>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 30,
+              width: "80%",
+              alignItems: "center",
+            }}
+          >
+            <RadioButton.Group
+              onValueChange={(newValue) => setChecked(newValue)}
+              value={checked}
+            >
+              <RadioButton.Item value="Fourth" />
+            </RadioButton.Group>
+            <View
+              style={{
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={{ fontSize: 21, fontWeight: 500 }}>Net Banking</Text>
+              <Image source={require("../image/PaymentPayple.png")} />
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 30,
+              width: "80%",
+              alignItems: "center",
+            }}
+          >
+            <RadioButton.Group
+              onValueChange={(newValue) => setChecked(newValue)}
+              value={checked}
+            >
+              <RadioButton.Item value="Five" />
+            </RadioButton.Group>
+            <View
+              style={{
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={{ fontSize: 21, fontWeight: 500 }}>
+                Cash on Delivery ( COD )
+              </Text>
+            </View>
+          </View>
         </View>
 
         <View
@@ -241,7 +301,6 @@ export default function OrderSummary({ navigation }) {
               justifyContent: "center",
               width: "35%",
             }}
-            onPress={Payment}
           >
             <Text
               style={{
