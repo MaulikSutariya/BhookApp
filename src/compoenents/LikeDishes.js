@@ -5,6 +5,12 @@ import populardish1 from "../image/populardish1.png";
 import populardish2 from "../image/populardish2.png";
 import Navbar from "./Navbar";
 
+// Navicons icons
+import HomeImg from "../image/Home.png";
+import FavoriteImg from "../image/FavouriteCurrent.png";
+import ProfileImg from "../image/Profile.png";
+import SearchImg from "../image/Search.png";
+
 export default function LikeDishes({ navigation }) {
   const navigateonboarding = () => {
     navigation.navigate("Dish");
@@ -137,7 +143,7 @@ export default function LikeDishes({ navigation }) {
           })}
         </View>
       </ScrollView>
-      <Navbar />
+      <Navbar Home={HomeImg} Favorite={FavoriteImg} Profile={ProfileImg}  Search={SearchImg} />
     </View>
   );
 }

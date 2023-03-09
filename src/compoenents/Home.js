@@ -12,7 +12,7 @@ import React from "react";
 import Navbar from "./Navbar";
 
 // images
-import ActiveHome from "../image/ActiveHome.png";
+
 import Dinner from "../image/Dinner.png";
 import Lunch from "../image/Lunch.png";
 import Breakfast from "../image/Breakfast.png";
@@ -20,6 +20,12 @@ import Dessert from "../image/Dessert.png";
 import Todaydish1 from "../image/homedish1.png";
 import populardish1 from "../image/populardish1.png";
 import populardish2 from "../image/populardish2.png";
+
+// Navicons icons
+import HomeImg from "../image/HomeCurrent.png";
+import FavoriteImg from "../image/Favorite.png";
+import ProfileImg from "../image/Profile.png";
+import SearchImg from "../image/Search.png";
 
 export default function Home({ navigation }) {
   const navigateonboarding = () => {
@@ -391,7 +397,7 @@ export default function Home({ navigation }) {
 
         </View>
       </ScrollView>
-      <Navbar Home={ActiveHome} />
+      <Navbar Home={HomeImg} Favorite={FavoriteImg} Profile={ProfileImg}  Search={SearchImg} />
     </View>
   );
 }

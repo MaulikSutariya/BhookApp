@@ -6,6 +6,12 @@ import Navbar from "../compoenents/Navbar";
 import populardish1 from "../image/populardish1.png";
 import populardish2 from "../image/populardish2.png";
 
+// Navicons icons
+import HomeImg from "../image/HomeCurrent.png";
+import FavoriteImg from "../image/Favorite.png";
+import ProfileImg from "../image/Profile.png";
+import SearchImg from "../image/Search.png";
+
 export default function Dish({ navigation }) {
   const [count, setCount] = useState(0);
 
@@ -372,7 +378,7 @@ export default function Dish({ navigation }) {
           </View>
         </View>
       </ScrollView>
-      <Navbar />
+      <Navbar Home={HomeImg} Favorite={FavoriteImg} Profile={ProfileImg}  Search={SearchImg} />
     </View>
   );
 }
