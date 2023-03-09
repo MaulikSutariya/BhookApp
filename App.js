@@ -1,20 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+// components
+import SplashScreen from '../BhookApp/src/compoenents/SplashScreen';
+import CreateAccount from '../BhookApp/src/compoenents/CreateAccount';
+import Login from '../BhookApp/src/compoenents/Login';
+import Slider1 from '../BhookApp/src/compoenents/Slider1';
+import Slider2 from '../BhookApp/src/compoenents/Slider2';
+import Slider3 from '../BhookApp/src/compoenents/Slider3';
+import Home from '../BhookApp/src/compoenents/Home';
+import Navbar from '../BhookApp/src/compoenents/Navbar';
+import Dish from "./src/compoenents/Dish";
+import AddDeliveryAddress from "./src/compoenents/AddDeliveryAddress";
+import OrderSummary from "./src/compoenents/OrderSummary";
+
+
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false, animation: "none" }}
+      initialRouteName="Start"
+    >
+      <Stack.Screen name="Start" component={SplashScreen} />
+      <Stack.Screen name="CreateAccount" component={CreateAccount} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Slider1" component={Slider1} />
+      <Stack.Screen name="Slider2" component={Slider2} />
+      <Stack.Screen name="Slider3" component={Slider3} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Navbar" component={Navbar} />
+      <Stack.Screen name="Dish" component={Dish} />
+      <Stack.Screen name="AddDeliveryAddress" component={AddDeliveryAddress} />
+      <Stack.Screen name="OrderSummary" component={OrderSummary} />
+
+     
+    </Stack.Navigator>
+  </NavigationContainer>
+    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
