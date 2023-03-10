@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, Image, Pressable } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 
 import Navbar from "./Navbar";
 
@@ -12,6 +12,9 @@ import SearchImg from "../image/Search.png";
 export default function TrackOrder({ navigation }) {
   const navigateonboarding = () => {
     navigation.navigate("Profile");
+  };
+  const Home = () => {
+    navigation.navigate("Home");
   };
 
   return (
@@ -278,18 +281,32 @@ export default function TrackOrder({ navigation }) {
           <Image source={require("../image/addressRight.png")} />
         </View>
 
-        {/* <Pressable >
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: "600",
-              color: "#FF640D",
-              marginLeft: 5,
-            }}
-          >
-            Sign Up
-          </Text>
-        </Pressable> */}
+       
+
+       <View style={{marginTop:10,paddingBottom:150,justifyContent:"center",flexDirection:"row"}}>
+       <Pressable
+        style={{
+          backgroundColor: "#FF640D",
+          borderRadius: 5,
+          height: 47,
+          width: 180,
+          marginTop: 20,
+        }}
+        onPress={Home}
+      >
+        <Text
+          style={{
+            textAlign: "center",
+            paddingTop: 11,
+            fontSize: 18,
+            fontWeight: "700",
+            color: "white",
+          }}
+        >
+          BACK TO HOME
+        </Text>
+      </Pressable>
+       </View>
 
       </ScrollView>
       <Navbar

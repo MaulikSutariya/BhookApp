@@ -1,5 +1,6 @@
 import { View, Text, ScrollView, Image,Pressable } from "react-native";
 import React from "react";
+import { useNavigation } from '@react-navigation/native';
 
 import Navbar from "./Navbar";
 
@@ -19,7 +20,8 @@ import FavoriteImg from "../image/Favorite.png";
 import ProfileImg from "../image/ProfileCurrent.png";
 import SearchImg from "../image/Search.png";
 
-export default function Profile({ navigation }) {
+export default function Profile() {
+  const navigation = useNavigation();
   const navigateonboarding = () => {
     navigation.navigate("TrackOrder");
   };
@@ -27,34 +29,42 @@ export default function Profile({ navigation }) {
     {
       MenuImg: Notifications,
       MenuName: "Notifications",
+      destination: 'Home'
     },
     {
       MenuImg: Paymentmethod,
       MenuName: "Payment method",
+      destination: 'PaymentMethod'
     },
     {
       MenuImg: Rewardcredits,
       MenuName: "Reward credits",
+      destination: 'Home'
     },
     {
       MenuImg: InviteFriends,
       MenuName: "Invite Friends",
+      destination: 'Home'
     },
     {
       MenuImg: Trackorder,
       MenuName: "Track order",
+      destination: 'TrackOrder'
     },
     {
       MenuImg: Orderhistory,
       MenuName: "Order history",
+      destination: 'Home'
     },
     {
       MenuImg: About,
       MenuName: "About us",
+      destination: 'Home'
     },
     {
       MenuImg: Signout,
       MenuName: "Sign out",
+      destination: 'Login'
     },
   ];
   return (
@@ -94,7 +104,7 @@ export default function Profile({ navigation }) {
           {ProfileMenu.map((menu, i) => {
             return (
               <Pressable
-              onPress={navigateonboarding}
+              onPress={() => navigation.navigate(menu.destination)}
                 key={i}
                 style={{
                   flexDirection: "row",

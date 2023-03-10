@@ -150,7 +150,7 @@ export default function Payment({ navigation }) {
               onValueChange={(newValue) => setChecked(newValue)}
               value={checked}
             >
-              <RadioButton.Item value="first" />
+              <RadioButton.Item value="first" color="#FF640D" />
             </RadioButton.Group>
             <View
               style={{
@@ -177,7 +177,7 @@ export default function Payment({ navigation }) {
               onValueChange={(newValue) => setChecked(newValue)}
               value={checked}
             >
-              <RadioButton.Item value="second" />
+              <RadioButton.Item value="second" color="#FF640D" />
             </RadioButton.Group>
             <View
               style={{
@@ -203,7 +203,7 @@ export default function Payment({ navigation }) {
               onValueChange={(newValue) => setChecked(newValue)}
               value={checked}
             >
-              <RadioButton.Item value="third" />
+              <RadioButton.Item value="third" color="#FF640D"/>
             </RadioButton.Group>
             <View
               style={{
@@ -231,7 +231,7 @@ export default function Payment({ navigation }) {
               onValueChange={(newValue) => setChecked(newValue)}
               value={checked}
             >
-              <RadioButton.Item value="Fourth" />
+              <RadioButton.Item value="Fourth" color="#FF640D" />
             </RadioButton.Group>
             <View
               style={{
@@ -258,7 +258,7 @@ export default function Payment({ navigation }) {
               onValueChange={(newValue) => setChecked(newValue)}
               value={checked}
             >
-              <RadioButton.Item value="Five" />
+              <RadioButton.Item value="Five" color="#FF640D" />
             </RadioButton.Group>
             <View
               style={{
