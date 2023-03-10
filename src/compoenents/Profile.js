@@ -49,7 +49,7 @@ export default function Profile() {
     {
       MenuImg: Trackorder,
       MenuName: "Track order",
-      destination: 'TrackOrder'
+      destination: 'TrackOrdersMain'
     },
     {
       MenuImg: Orderhistory,

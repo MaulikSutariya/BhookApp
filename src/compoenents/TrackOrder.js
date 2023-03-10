@@ -11,15 +11,15 @@ import SearchImg from "../image/Search.png";
 
 export default function TrackOrder({ navigation }) {
   const navigateonboarding = () => {
-    navigation.navigate("Profile");
+    navigation.navigate("TrackOrdersMain");
   };
   const Home = () => {
     navigation.navigate("Home");
   };
 
   return (
-    <View style={{ height: "100%"  }}>
-      <ScrollView style={{ width: "100%", paddingTop: 60}}>
+    <View style={{ height: "100%" }}>
+      <ScrollView style={{ width: "100%", paddingTop: 60 }}>
         <Pressable
           onPress={navigateonboarding}
           style={{
@@ -281,33 +281,37 @@ export default function TrackOrder({ navigation }) {
           <Image source={require("../image/addressRight.png")} />
         </View>
 
-       
-
-       <View style={{marginTop:10,paddingBottom:150,justifyContent:"center",flexDirection:"row"}}>
-       <Pressable
-        style={{
-          backgroundColor: "#FF640D",
-          borderRadius: 5,
-          height: 47,
-          width: 180,
-          marginTop: 20,
-        }}
-        onPress={Home}
-      >
-        <Text
+        <View
           style={{
-            textAlign: "center",
-            paddingTop: 11,
-            fontSize: 18,
-            fontWeight: "700",
-            color: "white",
+            marginTop: 10,
+            paddingBottom: 170,
+            justifyContent: "center",
+            flexDirection: "row",
           }}
         >
-          BACK TO HOME
-        </Text>
-      </Pressable>
-       </View>
-
+          <Pressable
+            style={{
+              backgroundColor: "#FF640D",
+              borderRadius: 5,
+              height: 47,
+              width: 180,
+              marginTop: 10,
+            }}
+            onPress={Home}
+          >
+            <Text
+              style={{
+                textAlign: "center",
+                paddingTop: 11,
+                fontSize: 18,
+                fontWeight: "700",
+                color: "white",
+              }}
+            >
+              ORDER CANCLE
+            </Text>
+          </Pressable>
+        </View>
       </ScrollView>
       <Navbar
         Home={HomeImg}
