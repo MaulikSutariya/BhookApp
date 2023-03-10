@@ -16,6 +16,7 @@ import OrderSummary from "./src/compoenents/OrderSummary";
 import Payment from "./src/compoenents/Payment";
 import LikeDishes from "./src/compoenents/LikeDishes";
 import Profile from "./src/compoenents/Profile";
+import TrackOrder from "./src/compoenents/TrackOrder";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -42,6 +43,7 @@ export default function App() {
         <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen name="LikeDishes" component={LikeDishes} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="TrackOrder" component={TrackOrder} />
       </Stack.Navigator>
     </NavigationContainer>
   );

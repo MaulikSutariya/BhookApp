@@ -5,6 +5,7 @@ import {
   TextInput,
   ScrollView,
   Pressable,
+  // StatusBar
 } from "react-native";
 import React from "react";
 

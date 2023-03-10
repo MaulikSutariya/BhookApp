@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image,Pressable } from "react-native";
 import React from "react";
 
 import Navbar from "./Navbar";
@@ -19,7 +19,10 @@ import FavoriteImg from "../image/Favorite.png";
 import ProfileImg from "../image/ProfileCurrent.png";
 import SearchImg from "../image/Search.png";
 
-export default function Profile() {
+export default function Profile({ navigation }) {
+  const navigateonboarding = () => {
+    navigation.navigate("TrackOrder");
+  };
   const ProfileMenu = [
     {
       MenuImg: Notifications,
@@ -90,7 +93,8 @@ export default function Profile() {
         <View style={{ paddingLeft: 25, paddingRight: 25, paddingBottom: 25 }}>
           {ProfileMenu.map((menu, i) => {
             return (
-              <View
+              <Pressable
+              onPress={navigateonboarding}
                 key={i}
                 style={{
                   flexDirection: "row",
@@ -114,7 +118,7 @@ export default function Profile() {
                   </Text>
                   <Image source={require("../image/RightArrow.png")} />
                 </View>
-              </View>
+              </Pressable>
             );
           })}
         </View>
