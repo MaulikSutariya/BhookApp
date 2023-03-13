@@ -21,6 +21,7 @@ import PaymentMethod from "./src/compoenents/PaymentMethod";
 import TrackOrdersMain from "./src/compoenents/TrackOrdersMain";
 import Search from "./src/compoenents/Search";
 import Store from "./src/compoenents/Store";
+import ForgotPassword from "./src/compoenents/ForgotPassword";
 
 
 export default function App() {
@@ -53,6 +54,7 @@ export default function App() {
         <Stack.Screen name="TrackOrdersMain" component={TrackOrdersMain} />
         <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="Store" component={Store} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );

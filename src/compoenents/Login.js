@@ -8,6 +8,9 @@ export default function Login({ navigation }) {
   const navigateonboarding2 = () => {
     navigation.navigate("Home");
   };
+  const ForgotPassword = () => {
+    navigation.navigate("ForgotPassword");
+  };
   return (
     <View style={{ height: "100%", padding: 30, alignItems: "center" }}>
       <Image
@@ -72,6 +75,7 @@ export default function Login({ navigation }) {
           width: "100%",
           marginTop: 12,
         }}
+        onPress={ForgotPassword}
       >
         Forget Password?
       </Text>
