@@ -13,6 +13,9 @@ export default function Navbar({Search,Profile,Favorite,Home}) {
   const HomePage = () => {
     navigation.navigate("Home");
   };
+  const SearchPage = () => {
+    navigation.navigate("Search");
+  };
 
   return (
     <View
@@ -34,7 +37,7 @@ export default function Navbar({Search,Profile,Favorite,Home}) {
       <Pressable onPress={LikeDishes}>
         <Image source={Favorite} />
       </Pressable>
-      <Pressable>
+      <Pressable onPress={SearchPage}>
         <Image source={Search} />
       </Pressable>
       <Pressable onPress={ProfilePage}>

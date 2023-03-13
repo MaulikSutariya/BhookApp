@@ -19,6 +19,8 @@ import Profile from "./src/compoenents/Profile";
 import TrackOrder from "./src/compoenents/TrackOrder";
 import PaymentMethod from "./src/compoenents/PaymentMethod";
 import TrackOrdersMain from "./src/compoenents/TrackOrdersMain";
+import Search from "./src/compoenents/Search";
+import Store from "./src/compoenents/Store";
 
 
 export default function App() {
@@ -49,6 +51,8 @@ export default function App() {
         <Stack.Screen name="TrackOrder" component={TrackOrder} />
         <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
         <Stack.Screen name="TrackOrdersMain" component={TrackOrdersMain} />
+        <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="Store" component={Store} />
       </Stack.Navigator>
     </NavigationContainer>
   );

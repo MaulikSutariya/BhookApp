@@ -29,6 +29,7 @@ import ProfileImg from "../image/Profile.png";
 import SearchImg from "../image/Search.png";
 
 export default function Home({ navigation }) {
+  
   const navigateonboarding = () => {
     navigation.navigate("Dish");
   };
